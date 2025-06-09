@@ -1,20 +1,22 @@
 package Lab2;
 
+import java.util.*;
 public class palindrome {
-    public static void main(String[] args){
-        String str = "abbaa";
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the String : ");
+        String str = sc.next();
         String str1 = str.toLowerCase();
-        int left = 0;
-        int right = str.length()-1;
-        while(left < right){
-            if(str1.charAt(left) != str1.charAt(right)){
-                System.out.println("Not Palindrome");
-                return;
-            }
-            left++;
-            right--;
+        String rev = "";
+        for(int i = str1.length()-1; i>=0;i--){
+            rev = rev + str1.charAt(i);
         }
-            System.out.println("Palindrome");
+        if(str.equals(rev)){
+            System.out.println("yes it is palindrome");
+        }else{
+            System.out.println("no it is not palindrome");
+        }
+        sc.close();
     }
 }
 
